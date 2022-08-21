@@ -17,5 +17,9 @@ request.onerror = function(event) {
 
 function saveRecord(record){
     const transaction = db.transcation("pending", "readwrite");
-    const store = transaction.storeObject
-}
+    const store = transaction.storeObject;
+
+    store.add(record);
+};
+
+window.addEventListener("online", checkDatabase);
